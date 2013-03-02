@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2013 Paul Muad'Dib
+
+This file is part of Graboid.
+ 
+Graboid is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Graboid is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Graboid.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+
+    <string name="app_name">Graboid</string>
+    <string name="send_label">Graboid Key Import</string>
+    <string name="key_import_confirm_title">Import new keys?</string>
+    <string name="key_import_confirm_message">Importing new keys will erase your current keys and tag data.</string>
+    <string name="key_import_confirm_ok">Yes, import keys</string>
+    <string name="key_import_confirm_cancel">No, don\'t import</string>
+    <string name="key_import_success">Keys imported</string>
+    <string name="key_import_aborted">Import cancelled</string>
+    <string name="key_import_download_started">Started key file download</string>
+    <string name="key_import_default_dialog_title">Default Keyfiles</string>
+    <string name="menu_import_default">Import Default Keys</string>
+    <string name="menu_fuse_acl">Protect Tag</string>
+    <string name="menu_fuse_acl_confirm_title">Protect Tag</string>
+    <string name="menu_fuse_acl_confirm_message">This will modify the loaded tag to prevent changes to its  access rights. Do you want to protect the tag?</string>
+    <string name="menu_fuse_acl_confirm_ok">Yes</string>
+    <string name="menu_fuse_acl_confirm_cancel">No</string>
+    <string name="tag_acl_fused">The tag is now protected</string>
+    <string name="menu_info">Help</string>
+    <string name="menu_clear_keys">Clear Keys</string>
+    <string name="menu_clear_tag">Clear Tag</string>
+    <string name="menu_clear_keys_confirm_title">Delete Keys</string>
+    <string name="menu_clear_keys_confirm_message">Without keys you will not be able to record tags. Do you want to delete the keys?</string>
+    <string name="menu_clear_keys_and_tag_confirm_message">Without keys you will not be able to record tags. Deleting the keys will also erase your current tag data. Do you want to delete the keys?</string>
+    <string name="menu_clear_keys_confirm_ok">Yes</string>
+    <string name="menu_clear_keys_confirm_cancel">No</string>
+    <string name="menu_clear_tag_confirm_title">Delete Tag</string>
+    <string name="menu_clear_tag_confirm_message">You will no longer be able to replay the tag once it is deleted. Do you want to delete the tag?</string>
+    <string name="menu_clear_tag_confirm_ok">Yes</string>
+    <string name="menu_clear_tag_confirm_cancel">No</string>
+    <string name="read_tag_progress">Reading tag...</string>
+    <string name="write_tag_progress">Writing tag...</string>
+    <string name="nokey_text">Load a key...</string>
+    <string name="clean_text">Tap to record...</string>
+    <string name="recording_text">Recording</string>
+    <string name="loaded_text">Tap to replay...</string>
+    <string name="replay_text">Replaying</string>
+    <string name="tag_not_recording">Activate recording to store the tag</string>
+    <string name="tag_not_replaying">Activate replay to update the tag</string>
+    <string name="tag_no_keys">No keys loaded</string>
+    <string name="err_unknown_card_type">Unknown Tag Type</string>
+    <string name="err_wrong_uid">Wrong card - not the recorded one</string>
+    <string name="err_key_import">Error importing keys</string>
+    <string name="err_to_few_keys">Too few keys in keyfile</string>
+    <string name="err_irrecoverable">Irrecoverable error. Re-install the app.</string>
+
+</resources>
