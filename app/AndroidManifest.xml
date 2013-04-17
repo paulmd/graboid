@@ -23,7 +23,7 @@ along with Graboid.  If not, see <http://www.gnu.org/licenses/>.
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="15"
         android:targetSdkVersion="17" />
 
     <uses-feature

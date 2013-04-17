@@ -23,7 +23,6 @@ import java.io.File;
 import java.io.InputStream;
 
 import org.graboid.DomainState.State;
-import org.graboid.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -164,6 +163,24 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_clear_keys:
+            return menuClearKeys(item);
+        case R.id.menu_clear_tag:
+            return menuClearTag(item);
+        case R.id.menu_fuse_acl:
+            return menuFuseACL(item);
+        case R.id.menu_info:
+            return menuInfo(item);
+        case R.id.menu_import_default:
+            return menuImportDefault(item);
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         if (mState != null) {
             menu.findItem(R.id.menu_clear_keys).setEnabled(mState.hasKeys());
@@ -173,12 +190,13 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
         return super.onPrepareOptionsMenu(menu);
     }
 
-    public void menuInfo(MenuItem item) {
+    public boolean menuInfo(MenuItem item) {
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
+        return true;
     }
 
-    public void menuFuseACL(MenuItem item) {
+    public boolean menuFuseACL(MenuItem item) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
                 .setTitle(R.string.menu_fuse_acl_confirm_title).setMessage(R.string.menu_fuse_acl_confirm_message);
         dialogBuilder.setPositiveButton(R.string.menu_fuse_acl_confirm_ok, new OnClickListener() {
@@ -198,10 +216,10 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
             }
         }).create();
         dialogBuilder.create().show();
-
+        return true;
     }
 
-    public void menuClearKeys(MenuItem item) {
+    public boolean menuClearKeys(MenuItem item) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
                 .setTitle(R.string.menu_clear_keys_confirm_title);
         if (mState.getState() == State.CLEAN) {
@@ -222,9 +240,10 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
             }
         }).create();
         dialogBuilder.create().show();
+        return true;
     }
 
-    public void menuClearTag(MenuItem item) {
+    public boolean menuClearTag(MenuItem item) {
         AlertDialog dialog = new AlertDialog.Builder(this).setTitle(R.string.menu_clear_tag_confirm_title)
                 .setMessage(R.string.menu_clear_tag_confirm_message)
                 .setPositiveButton(R.string.menu_clear_tag_confirm_ok, new OnClickListener() {
@@ -240,9 +259,10 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
                     }
                 }).create();
         dialog.show();
+        return true;
     }
 
-    public void menuImportDefault(MenuItem item) {
+    public boolean menuImportDefault(MenuItem item) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.key_import_default_dialog_title).setItems(R.array.default_keyfile_desc,
                 new DialogInterface.OnClickListener() {
@@ -257,6 +277,7 @@ public class GrabActivity extends Activity implements DomainState.IDomainStateLi
                     }
                 });
         builder.create().show();
+        return true;
     }
 
     public void tap(View view) {
